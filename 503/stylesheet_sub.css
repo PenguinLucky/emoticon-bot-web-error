@@ -1,10 +1,10 @@
-.sign.error-page-wrapper {
+body {
     font-family: 'Source Sans Pro', sans-serif;
     background-color: #179eca;
     position: relative;
 }
 
-.sign.error-page-wrapper .sign-container {
+.sign-container {
     width: 450px;
     height: 415px;
     margin: 0 auto;
@@ -14,7 +14,7 @@
 }
 
 
-.sign.error-page-wrapper .sign-container .nob {
+.sign-container .nob {
     height: 44px;
     width: 44px;
     border-radius: 99px;
@@ -25,7 +25,7 @@
     margin-left: -22px;
 }
 
-.sign.error-page-wrapper .sign-container .post {
+.sign-container .post {
     transition: background-color .5s linear;
     width: 190px;
     height: 15px;
@@ -33,19 +33,19 @@
     background-color: #343c3f;
 }
 
-.sign.error-page-wrapper .sign-container .post.left {
+.sign-container .post.left {
     position: absolute;
     transform: rotate(-30deg);
     left: 35px;
 }
 
-.sign.error-page-wrapper .sign-container .post.right {
+.sign-container .post.right {
     position: absolute;
     transform: rotate(30deg);
     right: 35px;
 }
 
-.sign.error-page-wrapper .sign-container .pane {
+.sign-container .pane {
     transition: background-color .5s linear, border-color .5s linear;
     box-shadow: 0 5px 0 rgba(0, 0, 0, .1) inset, 5px 0 0 rgba(0, 0, 0, .1) inset, 15px 15px 0 rgba(0, 0, 0, .1);
     background-color: #fff;
@@ -58,7 +58,7 @@
     right: 0px;
 }
 
-.sign.error-page-wrapper .sign-container .pane .headline {
+.sign-container .pane .headline {
     transition: color .5s linear;
     margin-top: 65px;
     margin-bottom: 10px;
@@ -70,11 +70,11 @@
     color: #ffba00;
 }
 
-.sign.error-page-wrapper .sign-container .pane.just-header .headline {
+.sign-container .pane.just-header .headline {
     margin-top: 100px;
 }
 
-.sign.error-page-wrapper .sign-container .pane .context {
+.sign-container .pane .context {
     transition: color .5s linear;
     color: #ffba00;
     font-size: 24px;
@@ -83,37 +83,37 @@
 
 
 @media screen and (max-width: 500px) {
-    .sign.error-page-wrapper {
+    body {
         padding-top: 10%;
     }
 
-    .sign.error-page-wrapper .sign-container {
+    .sign-container {
         width: 280px;
         top: 0px !important;
     }
 
-    .sign.error-page-wrapper .sign-container .post {
+    .sign-container .post {
         width: 100px;
         top: 50px;
     }
 
-    .sign.error-page-wrapper .sign-container .pane {
+    .sign-container .pane {
         top: 70px;
         height: 220px;
     }
 
-    .sign.error-page-wrapper .sign-container .pane .headline {
+    .sign-container .pane .headline {
         margin-top: 20px;
         font-size: 45px;
         margin-bottom: 6px;
     }
 
-    .sign.error-page-wrapper .sign-container .pane.just-header .headline {
+    .sign-container .pane.just-header .headline {
         margin-top: 39px;
         line-height: 55px;
     }
 
-    .sign.error-page-wrapper .sign-container .pane .context {
+    .sign-container .pane .context {
         font-size: 20px;
         line-height: 28px;
     }
@@ -122,14 +122,14 @@
 
 
 
-.sign.error-page-wrapper .text-container {
+.text-container {
     max-width: 425px;
     position: absolute;
     bottom: 20px;
     left: 35px;
 }
 
-.sign.error-page-wrapper .text-container .headline {
+.text-container .headline {
     transition: color .5s linear;
     font-size: 40px;
     line-height: 52px;
@@ -138,26 +138,26 @@
     color: rgba(255, 255, 255, .3);
 }
 
-.sign.error-page-wrapper .text-container .context {
+.text-container .context {
     transition: color .5s linear;
     font-size: 18px;
     line-height: 27px;
     color: #fff;
 }
 
-.sign.error-page-wrapper .text-container .context p {
+.text-container .context p {
     margin: 0;
 }
 
-.sign.error-page-wrapper .text-container .context p+p {
+.text-container .context p+p {
     margin-top: 10px;
 }
 
-.sign.error-page-wrapper .buttons-container {
+.buttons-container {
     margin-top: 20px;
 }
 
-.sign.error-page-wrapper .buttons-container a {
+.buttons-container a {
     transition: text-indent .2s linear, color .5s linear, border-color .5s linear;
     font-size: 16px;
     text-transform: uppercase;
@@ -173,70 +173,70 @@
     position: relative;
 }
 
-.sign.error-page-wrapper .buttons-container a:hover {
+.buttons-container a:hover {
     background-color: rgba(255, 255, 255, .1);
     text-indent: 17px;
 }
 
-.sign.error-page-wrapper .buttons-container a:first-child {
+.buttons-container a:first-child {
     margin-right: 25px;
 }
 
-.sign.error-page-wrapper .buttons-container .fa {
+.buttons-container .fa {
     transition: left .2s ease-out;
     position: absolute;
     left: -50px;
 }
 
-.sign.error-page-wrapper .buttons-container .fa-warning {
+.buttons-container .fa-warning {
     font-size: 16px;
     top: 14px;
 }
 
-.sign.error-page-wrapper .buttons-container a:hover .fa-warning {
+.buttons-container a:hover .fa-warning {
     left: 0px;
 }
 
-.sign.error-page-wrapper .buttons-container .fa-power-off {
+.buttons-container .fa-power-off {
     font-size: 16px;
     top: 14px;
 }
 
-.sign.error-page-wrapper .buttons-container a:hover .fa-power-off {
+.buttons-container a:hover .fa-power-off {
     left: 0px;
 }
 
-.sign.error-page-wrapper .buttons-container .fa-home {
+.buttons-container .fa-home {
     font-size: 18px;
     top: 12px;
 }
 
-.sign.error-page-wrapper .buttons-container a:hover .fa-home {
+.buttons-container a:hover .fa-home {
     left: 25px;
 }
 
 @media screen and (max-width: 500px) {
-    .sign.error-page-wrapper .text-container {
+    .text-container {
         bottom: 20px;
         left: 20px;
         right: 20px;
     }
 
-    .sign.error-page-wrapper .text-container .header {
+    .text-container .header {
         font-size: 32px;
         line-height: 40px;
     }
 
-    .sign.error-page-wrapper .text-container .context {
+    .text-container .context {
         font-size: 15px;
         line-height: 22px;
     }
 
-    .sign.error-page-wrapper .buttons-container {
+    .buttons-container {
         overflow: hidden;
     }
 
-    .sign.error-page-wrapper .buttons-container a {
+    .buttons-container a {
         font-size: 14px;
         padding: 8px 0 9px;
         width: 45%;
@@ -244,15 +244,15 @@
         margin: 0;
     }
 
-    .sign.error-page-wrapper .buttons-container a+a {
+    .buttons-container a+a {
         float: right;
     }
 
-    .sign.error-page-wrapper .buttons-container a:hover {
+    .buttons-container a:hover {
         text-indent: 0px;
     }
 
-    .sign.error-page-wrapper .buttons-container .fa {
+    .buttons-container .fa {
         display: none;
     }
 }
