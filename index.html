@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+
+        <title>顔文字Bot　エラーページ</title>
+        <link rel="favicon icon" href="https://emoticon-bot.tk/assets/img/favicon.png">
+        <meta charset=utf-8>
+        <meta name=viewport content="width=device-width">
+
+        <meta property="og:url" content="https://error.emoticon-bot.tk/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="顔文字で返してくるうざいBot　エラーページホーム" />
+        <meta property="og:description" content="顔文字Botに可能性を。" />
+        <meta property="og:site_name" content="顔文字で返してくるうざいBot　エラーページホーム" />
+        <meta property="og:image" content="https://emoticon-bot.tk/assets/img/favicon.png" />
+
+        <style>
+
+            body{
+                margin: 0;
+                background-color:#36393e;
+                color:#ffffff;
+                border-top: 6px #7289DA solid;
+                border-bottom: 6px #7289DA solid;
+            }
+
+            h1 {
+                text-align: center;
+                margin: auto;
+            }
+
+            strong {
+                font: bold 1.2em / 1 Verdana, Helvetica, Arial, sans-serif;
+                text-transform: uppercase;
+                background: linear-gradient(to right, #f00 0%, #f80 14.28%, #dd0 28.56%, #0d0 42.85%, #0dd 57.14%, #00f 71.42%, #e0e 85.71%, #f00 100%) 0% center / 200% auto;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: rainbow 4s linear infinite;
+            }
+
+            @keyframes rainbow {
+                to { background-position-x: 200%; }
+            }
+
+            .pc { display: inline; }
+            .sp { display: none; }
+
+            @media only screen and (max-width: 750px) {
+                .pc { display: none; }
+                .sp { display: block; }
+            }
+
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            jQuery(function() {
+                $("body").css({ "width":$(window).width() , "height":$(window).height()-12 });
+                $("h1").css({ "margin-top":( $(window).height()-60 ) / 2 , "margin-bottom":( $(window).height()-60 ) / 2 });
+
+                function window_load() {
+                    $("body").css({ "width":$(window).width() , "height":$(window).height()-12 });
+                    $("h1").css({ "margin-top":( $(window).height()-60 ) / 2 , "margin-bottom":( $(window).height()-60 ) / 2 });
+                };
+
+                window.onresize = window_load;
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <h1>顔文字<span class="pc" >で返してくるうざい</span>Bot に<span class="pc" > </span><br class="sp" ><strong>可能性</strong><span class="pc" > </span>を。</h1>
+
+    </body>
+</html>
