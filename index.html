@@ -16,6 +16,12 @@
 
         <style>
 
+            @font-face {
+                font-family: user-name;
+                src: url(https://font.emoticon-bot.tk/cp_period.ttf);
+                font-weight: 300;
+            }
+
             body{
                 margin: 0;
                 background-color:#36393e;
@@ -24,7 +30,29 @@
                 border-bottom: 6px #7289DA solid;
             }
 
-            h1 {
+            .login-user {
+                font-family: user-name;
+                font-size: 20px;
+                padding: 4px 10px;
+                height: 40px;
+
+                display: flex;
+                position: fixed;
+                top: 6px;
+                right: 0;
+
+                align-items: center;
+            }
+
+            .login-user img {
+                width: auto;
+                height: 30px;
+                vertical-align: -.4em;
+                margin-right: 10px;
+                border-radius: 50%;
+            }
+
+            .title {
                 text-align: center;
                 margin: auto;
             }
@@ -43,12 +71,22 @@
                 to { background-position-x: 200%; }
             }
 
-            .pc { display: inline; }
-            .sp { display: none; }
+            .login-user span { display: inline; }
+
+            .title span { display: inline; }
+            .title br { display: none; }
 
             @media only screen and (max-width: 750px) {
-                .pc { display: none; }
-                .sp { display: block; }
+
+                .login-user span { display: none; }
+
+                .title span { display: none; }
+                .title br { display: block; }
+
+                .login-user img {
+                    margin-right: 0;
+                }
+
             }
 
         </style>
@@ -56,22 +94,57 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
             jQuery(function() {
-                $("body").css({ "width":$(window).width() , "height":$(window).height()-12 });
-                $("h1").css({ "margin-top":( $(window).height()-60 ) / 2 , "margin-bottom":( $(window).height()-60 ) / 2 });
+
+                function get_cookie(key) {
+                    var cookies = document.cookie ;
+                    var cookiesArray = cookies.split('; ');
+                    var return_msg = undefined
+
+                    for(var c of cookiesArray){
+                        var cArray = c.split('=');
+                        if( cArray[0] == key){
+                            return_msg = decodeURIComponent(cArray[1])
+                        }
+                    }
+
+                    return return_msg
+                };
 
                 function window_load() {
                     $("body").css({ "width":$(window).width() , "height":$(window).height()-12 });
                     $("h1").css({ "margin-top":( $(window).height()-60 ) / 2 , "margin-bottom":( $(window).height()-60 ) / 2 });
                 };
 
+                window_load();
                 window.onresize = window_load;
+
+                var access_token = get_cookie("access_token");
+                if ( access_token != undefined ) {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open( "GET" , `https://emoticon-bot.tk/cache/login/user/?access_token=${access_token}` );
+                    xhr.setRequestHeader('Content-Type', 'Access-Control-Allow-Origin: *');
+                    xhr.send();
+
+                    xhr.onreadystatechange = function() {
+                        if(xhr.readyState === 4 && xhr.status === 200) {
+                            var json = JSON.parse( xhr.responseText );
+                            if ( json["login"] == true ) {
+                                $("body").append(`
+                                    <div class="login-user" >
+                                        <img src="https://cdn.discordapp.com/avatars/${json["id"]}/${json["avatar"]}.png?size=1024">
+                                        <span>${json["username"]}</span>
+                                    </div>
+                                `);
+                            };
+                        };
+                    };
+                };
+
             });
         </script>
 
     </head>
     <body>
-
-        <h1>顔文字<span class="pc" >で返してくるうざい</span>Bot に<span class="pc" > </span><br class="sp" ><strong>可能性</strong><span class="pc" > </span>を。</h1>
-
+        <h1 class="title" >顔文字<span>で返してくるうざい</span>Bot に<span> </span><br><strong>可能性</strong><span> </span>を。</h1>
     </body>
 </html>
